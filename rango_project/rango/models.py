@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Question(models.Model):
@@ -13,3 +14,7 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 def __str__(self):
    return self.question
+
+def publish(self):
+    self.pub_date=timezone.now()
+    self.save()
