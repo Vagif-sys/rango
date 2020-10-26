@@ -1,8 +1,6 @@
-from django.views.generic import TemplateView
+from django.shortcuts import render
+from.models import Question
 
-class Home(TemplateView):
-    template_name = 'rango/home.html'
+def home(request):
+    return render(request, "rango/home.html",{})
 
-
-class About(TemplateView):
-    template_name ="rango/about.html"

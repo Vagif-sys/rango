@@ -1,10 +1,10 @@
 from django.urls import path
-from.views import Home,About
+from.import views
 
 #urlpatterns =[path('',views.rango_list),
 urlpatterns =[
-    path('about/', About.as_view(),name ='about'),
-    path('', Home.as_view(),name ='home'),
+   
+    path('', views.home,name ='home'),
     
 
 ]
