@@ -1,22 +1,12 @@
-<html>
-    <head>
-        <title>Rango Post</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Rango Blog</a></h1>
-        </div>
+{% extends 'base.html' %}
 
-        <div>
-            {%for post in posts %}
-            <p>published: {{post.pub_date}}</p>
+{% block content %}
+    {%for post in posts %}
+        <div class = "post">
+            <div class = "date">
+              <p>published: {{post.pub_date}}</p>
+            </div>
             <p>The Question  is {{post.question_text}}</p>
         </div>
-            {% endfor %}
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-           
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}     
