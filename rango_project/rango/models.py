@@ -3,6 +3,7 @@ from django.utils import timezone
 
 
 class Question(models.Model):
+    title = models.CharField(null=True, max_length=200)
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField(null=True, blank= False)
     def __str__(self):
