@@ -5,7 +5,8 @@ from.import views
 urlpatterns =[
    
     path('', views.home,name ='home'),
-    path('about/<str:title>/',views.about, name="about"),  
+    path('about/<str:title>/',views.about, name="about"),
+    path('Log/',  views.Log, name="Log"),
     
 
 ]
