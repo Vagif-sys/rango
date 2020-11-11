@@ -7,9 +7,8 @@ def home(request):
     posts = Question.objects.filter(pub_date__lte=timezone.now()).order_by('pub_date')
     return render(request, "rango/home.html",{'posts':posts})
 
-def about(request,title):
-
-    return render(request,'rango/about.html',{'title': title})
+def about(request):
+    return render(request,'rango/about.html')
 
 def Log(request):
     form = QuestForm()

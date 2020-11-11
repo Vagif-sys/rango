@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+   <h1><a href="{% url 'about'  %}">About</a></h1>
     {%for post in posts %}
         <div class = "post">
             <div class = "date">
-              <h1><a href="{% url 'about' post.title  %}">{{post.title}}</a></h1>
+              <h1><a href="{% url 'about'  %}">{{post.title}}</a></h1>
               <p>published: {{post.pub_date}}</p>
             </div>
             <p>The Question  is {{post.question_text}}</p>
