@@ -1,16 +1,26 @@
-from django.shortcuts import  render, get_object_or_404
-from.models import Question
+from django.shortcuts import  render, get_object_or_404,redirect
+from.models import Customer
 from django.utils import timezone
-from.forms import QuestForm
+from.forms import CustForm
 
 def home(request):
-    posts = Question.objects.filter(pub_date__lte=timezone.now()).order_by('pub_date')
-    return render(request, "rango/home.html",{'posts':posts})
+
+    return render(request, "rango/home.html",{})
 
 def about(request):
-    return render(request,'rango/about.html')
+    products = Product.objects.all()
+    return render(request,'rango/about.html',{'products': products})
 
 def Log(request):
-    form = QuestForm()
+    if request.method == 'POST':
+       form = CustForm(request.POST)
+       if form.is_valid():
+           post = form.save()
+           post.title = request.user
+           post.date_created =timezone.now()
+           post.save()
+           return redirect('about')
+    else:
+         form = CustForm()
     return render(request, "Log.html",{'form':form})
 

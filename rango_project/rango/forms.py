@@ -1,7 +1,7 @@
 from django import forms
-from.models import Question
+from.models import Customer
 
-class QuestForm(forms.ModelForm):
+class CustForm(forms.ModelForm):
     class Meta:
-        model=Question
-        fields = ('title','question_text',)
+        model=Customer
+        fields = ('name','phone','email','date_created',)
