@@ -1,7 +1,7 @@
-from django import forms
-from.models import Customer
+from django.forms import ModelForm
+from.models import Order
 
-class CustForm(forms.ModelForm):
+class Orderform(ModelForm):
     class Meta:
-        model=Customer
-        fields = ('name','phone','email','date_created',)
+        model=Order
+        fields = "__all__"
