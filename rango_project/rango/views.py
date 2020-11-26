@@ -50,4 +50,4 @@ def deleteOrder(request,pk):
         order.delete()
         return  redirect('/')
     context = {'item':order}
- render(request, "rango/delete.html",context)
+    render(request, "rango/delete.html",context)
